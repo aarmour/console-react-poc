@@ -1,0 +1,24 @@
+{
+  "name": "console-react-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./src -d lib --ignore '__tests__'",
+    "build-umd": "NODE_ENV=production webpack src/index.js umd/components.js",
+    "build-min": "NODE_ENV=production webpack -p src/index.js umd/components.min.js",
+    "test": "echo \"LOL\" && exit 0",
+    "postinstall": "node ./npm-scripts/postinstall.js"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^0.14.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-core": "^5.8.29",
+    "babel-loader": "^5.3.2",
+    "react": "^0.14.0",
+    "webpack": "^1.12.2"
+  }
+}
