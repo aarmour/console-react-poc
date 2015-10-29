@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const CourseList = (props) => {
+function CourseList(props) {
   return (
     <ul>
     </ul>

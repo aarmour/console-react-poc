@@ -2,12 +2,11 @@ import React, { PropTypes } from 'react';
 
 const SIZES = ['large', 'extra-large'];
 
-
-const Title = (props) => {
+function Title(props) {
   return (
     <div>{props.children}</div>
   );
-};
+}
 
 Title.propTypes = {
   size: PropTypes.oneOf(SIZES)

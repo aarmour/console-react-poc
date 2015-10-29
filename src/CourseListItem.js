@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import styles from './CourseListItem.css';
 import { Title, LabelGroup, DateRange } from './';
 
-const CourseListItem = (props) => {
+function CourseListItem(props) {
   return (
     <div className={styles.root}>
       <Title>{props.title}</Title>

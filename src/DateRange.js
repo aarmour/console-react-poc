@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const DateRange = (props) => {
+function DateRange(props) {
   return (
     <div>
       {props.startDate.toString()} to {props.endDate.toString()}

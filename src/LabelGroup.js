@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
 import { Label } from './';
 
-const LabelGroup = (props) => {
+function LabelGroup(props) {
   return (
     <div>
       <Label>{props.label}</Label>
       <div>{props.children}</div>
     </div>
   );
-};
+}
 
 LabelGroup.propTypes = Object.assign(
   {},
