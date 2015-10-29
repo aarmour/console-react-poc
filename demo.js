@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { CourseListItem } from './src';
 
-const renderCourseListItem = () => {
+function handleSelectCourse(title) {
+  console.log('selected course:', title);
+}
+
+function renderCourseListItem() {
   const educators = ['Sigmund Freud', 'B. F. Skinner']
   const startDate = new Date('04-02-1980');
   const endDate = new Date('12-31-2018');
@@ -15,10 +19,11 @@ const renderCourseListItem = () => {
         educators={educators}
         startDate={startDate}
         endDate={endDate}
+        onSelectCourse={handleSelectCourse}
       />
     </div>
   );
-};
+}
 
 const Demo = (props) => {
   return (

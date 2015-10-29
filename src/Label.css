@@ -1,0 +1,8 @@
+.root {
+  font-size: 0.875rem;
+}
+
+.secondary {
+  composes: root;
+  color: #7d7d7d;
+}

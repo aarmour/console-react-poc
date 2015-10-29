@@ -4,20 +4,14 @@ import { Label } from './';
 function LabelGroup(props) {
   return (
     <div>
-      <Label>{props.label}</Label>
-      <div>{props.children}</div>
+      <Label {...props}>{props.label}</Label>
+      <span>{props.children}</span>
     </div>
   );
 }
 
-LabelGroup.propTypes = Object.assign(
-  {},
-  {
-    label: PropTypes.string.isRequired
-  },
-  Label.propTypes
-);
-
-LabelGroup.defaultProps = Object.assign({}, Label.defaultProps);
+LabelGroup.propTypes = {
+  label: PropTypes.string.isRequired
+};
 
 export default LabelGroup;

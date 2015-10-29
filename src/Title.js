@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
+import styles from './Title.css';
 
 const SIZES = ['large', 'extra-large'];
 
 function Title(props) {
   return (
-    <div>{props.children}</div>
+    <div className={styles.root}>{props.children}</div>
   );
 }
 
