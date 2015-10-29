@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { CourseListItem } from './src';
 
 const renderCourseListItem = () => {
-  const educators = ['Sigmund Frued', 'B. F. Skinner']
+  const educators = ['Sigmund Freud', 'B. F. Skinner']
   const startDate = new Date('04-02-1980');
   const endDate = new Date('12-31-2018');
 

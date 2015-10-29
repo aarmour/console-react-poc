@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
+import styles from './CourseListItem.css';
 import { Title, LabelGroup, DateRange } from './';
 
 const CourseListItem = (props) => {
   return (
-    <div>
+    <div className={styles.root}>
       <Title>{props.title}</Title>
       <LabelGroup
         type="secondary"
         label="Educators:">
-        {props.educators.join(' ,')}
+        {props.educators.join(', ')}
       </LabelGroup>
       <LabelGroup
         type="secondary"
