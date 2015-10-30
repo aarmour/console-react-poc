@@ -10,6 +10,7 @@ function renderCourseListItem() {
   const educators = ['Sigmund Freud', 'B. F. Skinner']
   const startDate = new Date('04-02-1980');
   const endDate = new Date('12-31-2018');
+  const thumbnailUrl = 'http://www.fillmurray.com/g/300/200';
 
   return (
     <div>
@@ -19,6 +20,7 @@ function renderCourseListItem() {
         educators={educators}
         startDate={startDate}
         endDate={endDate}
+        thumbnailUrl={thumbnailUrl}
         onSelectCourse={handleSelectCourse}
       />
     </div>
