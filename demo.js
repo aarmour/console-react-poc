@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CourseListItem } from './src';
+import { CourseListItem } from './src/course';
 
 function handleSelectCourse(title) {
   console.log('selected course:', title);

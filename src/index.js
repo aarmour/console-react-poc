@@ -1,6 +1,6 @@
-export CourseList from './CourseList';
-export CourseListItem from './CourseListItem';
-export DateRange from './DateRange';
-export Label from './Label';
-export LabelGroup from './LabelGroup';
-export Title from './Title';
+// General atoms and molecules
+export Typography from './typography';
+export DateFormatting from './date-formatting';
+
+// Course molecules and organisms
+export Course from './course';

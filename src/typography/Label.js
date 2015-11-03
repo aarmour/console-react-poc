@@ -10,18 +10,18 @@ function Label(props) {
   const className = styles[props.type];
 
   return (
-    <props.elementName className={className}>{props.children}</props.elementName>
+    <props.elementType className={className}>{props.children}</props.elementType>
   );
 }
 
 Label.propTypes = {
   type: PropTypes.oneOf(TYPES),
-  elementName: PropTypes.oneOf(ELEMENT_NAMES)
+  elementType: PropTypes.oneOf(ELEMENT_NAMES)
 };
 
 Label.defaultProps = {
   type: DEFAULT_TYPE,
-  elementName: DEFAULT_ELEMENT_NAME
+  elementType: DEFAULT_ELEMENT_NAME
 };
 
 export default Label;

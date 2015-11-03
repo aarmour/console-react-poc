@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import styles from './CourseListItem.css';
-import { Title, LabelGroup, DateRange } from './';
+import { CourseInfoItem } from './';
+import { Title } from '../typography';
+import { DateRange } from '../date-formatting';
 
 function handleClick(props, event) {
   if (props.onSelectCourse) {
@@ -21,21 +23,10 @@ function CourseListItem(props) {
       </div>
       <div className={styles.content}>
         <Title><a href="#">{props.title}</a></Title>
-        <LabelGroup
-          type="secondary"
-          label="Educators:"
-          elementName="h3">
-          {educators}
-        </LabelGroup>
-        <LabelGroup
-          type="secondary"
-          label="Course Dates:"
-          elementName="h3">
-          <DateRange
-            startDate={props.startDate}
-            endDate={props.endDate}
-          />
-        </LabelGroup>
+        <CourseInfoItem label="Educators:" value={educators} />
+        <CourseInfoItem label="Course Dates:">
+          <DateRange startDate={props.startDate} endDate={props.endDate} />
+        </CourseInfoItem>
       </div>
     </div>
   );
