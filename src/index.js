@@ -1,6 +1,6 @@
 // General atoms and molecules
-export Typography from './typography';
-export DateFormatting from './date-formatting';
+export * as Typography from './typography';
+export * as DateFormatting from './date-formatting';
 
 // Course molecules and organisms
-export Course from './course';
+export * as Course from './course';
