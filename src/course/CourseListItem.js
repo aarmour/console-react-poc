@@ -6,7 +6,7 @@ import { DateRange } from '../date-formatting';
 
 function handleClick(props, event) {
   if (props.onSelectCourse) {
-    props.onSelectCourse(props.title);
+    props.onSelectCourse(props.id, props.title);
   }
 
   event.preventDefault();
@@ -33,6 +33,7 @@ function CourseListItem(props) {
 }
 
 CourseListItem.propTypes = {
+  id: PropTypes.string.isRequired,
   brand: PropTypes.string,
   title: PropTypes.string.isRequired,
   sectionCode: PropTypes.string,
