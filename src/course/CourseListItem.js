@@ -20,7 +20,7 @@ function CourseListItem(props) {
         <div className={styles.thumbnail} style={thumbnailBg}></div>
       </div>
       <div className={styles.content}>
-        <Title><a href="#">{props.title}</a></Title>
+        <Title><a href="#" className={styles.link}>{props.title}</a></Title>
         <CourseInfoItem label="Educators:" value={educators} />
         <CourseInfoItem label="Course Dates:">
           <DateRange startDate={props.startDate} endDate={props.endDate} />

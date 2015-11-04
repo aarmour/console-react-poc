@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import styles from './CourseInfoItem.css';
 import { Label } from '../typography';
 
 function CourseInfoItem(props) {
@@ -6,7 +7,7 @@ function CourseInfoItem(props) {
 
   return (
     <div>
-      <Label type="secondary" elementType="h3">{props.label}</Label>
+      <Label className={styles.label} type="secondary" elementType="h3">{props.label}</Label>
       <Label>{value}</Label>
     </div>
   );
