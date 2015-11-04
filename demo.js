@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styles from './demo.css';
 import { CourseList, CourseListItem } from './src/course';
 
-function handleSelectCourse(id, title) {
-  console.log('selected course: [%s]', id, title);
+function handleAction(action, ...data) {
+  console.log('%s: %s', action, JSON.stringify(data));
 }
 
 function renderCourseListItem() {
@@ -22,7 +23,9 @@ function renderCourseListItem() {
         startDate={startDate}
         endDate={endDate}
         thumbnailUrl={thumbnailUrl}
-        onSelectCourse={handleSelectCourse}
+        onSelectCourse={handleAction.bind(null, 'select course')}
+        onInviteStudents={handleAction.bind(null, 'invite students')}
+        onCourseSettings={handleAction.bind(null, 'course settings')}
       />
     </div>
   );
@@ -36,7 +39,8 @@ function renderCourseList() {
       educators: ['Sean Carroll'],
       startDate: new Date('01-01-2016'),
       endDate: new Date('06-01-2016'),
-      thumbnailUrl: 'http://www.fillmurray.com/300/200'
+      thumbnailUrl: 'http://www.fillmurray.com/300/200',
+      isUserOwner: true
     },
     {
       id: '2',
@@ -45,13 +49,28 @@ function renderCourseList() {
       startDate: new Date('01-01-2016'),
       endDate: new Date('06-01-2016'),
       thumbnailUrl: 'http://www.placecage.com/300/200'
+    },
+    {
+      id: '3',
+      title: 'History of the Earth',
+      educators: ['James Hutton'],
+      startDate: new Date('01-01-2012'),
+      endDate: new Date('06-01-2012'),
+      thumbnailUrl: 'http://www.placecage.com/g/300/200',
+      isDeleted: true
     }
   ];
 
   return (
     <div>
       <h3>Course List</h3>
-      <CourseList courses={courses} onSelectCourse={handleSelectCourse} />
+      <CourseList
+        courses={courses}
+        onSelectCourse={handleAction.bind(null, 'select course')}
+        onRemoveCourse={handleAction.bind(null, 'remove course')}
+        onInviteStudents={handleAction.bind(null, 'invite students')}
+        onCourseSettings={handleAction.bind(null, 'course settings')}
+      />
     </div>
   );
 }

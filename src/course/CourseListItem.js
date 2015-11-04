@@ -1,15 +1,13 @@
 import React, { PropTypes } from 'react';
 import styles from './CourseListItem.css';
-import { CourseInfoItem } from './';
+import { CourseInfoItem, CourseActionButtons } from './';
 import { Title } from '../typography';
 import { DateRange } from '../date-formatting';
 
-function handleClick(props, event) {
-  if (props.onSelectCourse) {
-    props.onSelectCourse(props.id, props.title);
-  }
-
-  event.preventDefault();
+function handleAction(action, courseId, event) {
+  if (event && event.defaultPrevented) return;
+  if (action) action(courseId);
+  if (event) event.preventDefault();
 }
 
 function CourseListItem(props) {
@@ -17,7 +15,7 @@ function CourseListItem(props) {
   const thumbnailBg = { backgroundImage: `url(${props.thumbnailUrl})` };
 
   return (
-    <div className={styles.root} onClick={handleClick.bind(this, props)}>
+    <div className={styles.root} onClick={handleAction.bind(null, props.onSelectCourse, props.id)}>
       <div className={styles.sidebar}>
         <div className={styles.thumbnail} style={thumbnailBg}></div>
       </div>
@@ -27,6 +25,16 @@ function CourseListItem(props) {
         <CourseInfoItem label="Course Dates:">
           <DateRange startDate={props.startDate} endDate={props.endDate} />
         </CourseInfoItem>
+      </div>
+      <div className={styles.actionBtnContainer}>
+        <CourseActionButtons
+          isUserOwner={props.isUserOwner}
+          isDeleted={props.isDeleted}
+          onInviteStudents={handleAction.bind(null, props.onInviteStudents, props.id)}
+          onCourseSettings={handleAction.bind(null, props.onCourseSettings, props.id)}
+          onSelectCourse={handleAction.bind(null, props.onSelectCourse, props.id)}
+          onRemoveCourse={handleAction.bind(null, props.onRemoveCourse, props.id)}
+        />
       </div>
     </div>
   );
@@ -42,12 +50,16 @@ CourseListItem.propTypes = {
   endDate: PropTypes.instanceOf(Date).isRequired,
   thumbnailUrl: PropTypes.string.isRequired,
   isDeleted: PropTypes.bool,
-  onSelectCourse: PropTypes.func
+  isUserOwner: PropTypes.bool,
+  onSelectCourse: PropTypes.func,
+  onInviteStudents: PropTypes.func,
+  onCourseSettings: PropTypes.func
 };
 
 CourseListItem.defaultProps = {
   educators: [],
-  isDeleted: false
+  isDeleted: false,
+  isUserOwner: false
 };
 
 export default CourseListItem;
