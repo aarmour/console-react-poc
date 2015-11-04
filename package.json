@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "cp ./src/*.css lib && babel ./src -d lib --ignore '__tests__'",
+    "build": "./npm-scripts/build.sh",
     "build-umd": "NODE_ENV=production webpack ./index.js umd/components.js",
     "build-min": "NODE_ENV=production webpack -p ./index.js umd/components.min.js",
     "test": "echo \"LOL\" && exit 0",
