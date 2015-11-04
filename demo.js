@@ -17,7 +17,7 @@ function renderCourseListItem() {
     <div>
       <h3>Course List Item</h3>
       <CourseListItem
-        id='1'
+        id='psychology-101'
         title="Psychology 101"
         educators={educators}
         startDate={startDate}
@@ -34,7 +34,7 @@ function renderCourseListItem() {
 function renderCourseList() {
   const courses = [
     {
-      id: '1',
+      id: 'the-arrow-of-time',
       title: 'The Arrow of Time',
       educators: ['Sean Carroll'],
       startDate: new Date('01-01-2016'),
@@ -43,7 +43,7 @@ function renderCourseList() {
       isUserOwner: true
     },
     {
-      id: '2',
+      id: 'introduction-to-chemistry',
       title: 'Introduction to Chemistry',
       educators: ['Niels Bohr', 'Amedeo Avogadro'],
       startDate: new Date('01-01-2016'),
@@ -51,7 +51,7 @@ function renderCourseList() {
       thumbnailUrl: 'http://www.placecage.com/300/200'
     },
     {
-      id: '3',
+      id: 'history-of-the-earth',
       title: 'History of the Earth',
       educators: ['James Hutton'],
       startDate: new Date('01-01-2012'),
