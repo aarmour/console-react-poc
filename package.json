@@ -1,7 +1,7 @@
 {
-  "name": "console-react-poc",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@aarmour/console-react-poc",
+  "version": "0.0.1",
+  "description": "A react.js proof-of-concept for https://console.pearson.com",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
