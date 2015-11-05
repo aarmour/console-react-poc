@@ -11,7 +11,9 @@ Then import the module in your project:
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CourseList } from '@aarmour/react-console-poc';
+import { course } from '@aarmour/console-react-poc';
+
+const { CourseList } = course;
 
 function App(props) {
   return <CourseList courses={[...]} />;
