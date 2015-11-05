@@ -22,7 +22,7 @@ function App(props) {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-Note that this project uses [CSS Modules](https://github.com/css-modules/css-modules), so you will need to configure your bundler with the appropriate [loader](https://github.com/css-modules/webpack-demo) or [plugin](https://github.com/css-modules/css-modulesify).
+Note that this project uses [CSS Modules](https://github.com/css-modules/css-modules), so you will need to configure your bundler with the appropriate [loader](https://github.com/css-modules/webpack-demo) or [plugin](https://github.com/css-modules/css-modulesify). See the [examples](examples) for help.
 
 #### UMD
 
