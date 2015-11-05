@@ -2,14 +2,17 @@
   "name": "@aarmour/console-react-poc",
   "version": "0.0.1",
   "description": "A react.js proof-of-concept for https://console.pearson.com",
-  "main": "index.js",
+  "files": [
+    "lib",
+    "umd"
+  ],
+  "main": "lib/index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "./npm-scripts/build.sh",
+    "build": "babel ./src -d ./lib --ignore '__tests__' && cd ./src && find . -name '*.css' | cpio -pdm ../lib",
     "build-umd": "NODE_ENV=production webpack ./index.js umd/components.js",
     "build-min": "NODE_ENV=production webpack -p ./index.js umd/components.min.js",
-    "test": "echo \"LOL\" && exit 0",
-    "postinstall": "node ./npm-scripts/postinstall.js"
+    "test": "echo \"LOL\" && exit 0"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -23,6 +26,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
+    "rimraf": "^2.4.3",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
