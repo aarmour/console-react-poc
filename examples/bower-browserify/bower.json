@@ -1,0 +1,8 @@
+{
+  "name": "bower-browserify",
+  "private": true,
+  "dependencies": {
+    "console-react-poc": "git+https://github.com/aarmour/console-react-poc.git#bower",
+    "react": "~0.14.2"
+  }
+}
