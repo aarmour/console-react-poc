@@ -14,7 +14,10 @@ function CourseList(props) {
 
 CourseList.propTypes = {
   courses: PropTypes.array.isRequired,
-  onSelectCourse: PropTypes.func.isRequired
+  onSelectCourse: PropTypes.func.isRequired,
+  onRemoveCourse: PropTypes.func.isRequired,
+  onInviteStudents: PropTypes.func.isRequired,
+  onCourseSettings: PropTypes.func.isRequired
 };
 
 export default CourseList;

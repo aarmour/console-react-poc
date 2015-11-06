@@ -52,6 +52,7 @@ CourseListItem.propTypes = {
   isDeleted: PropTypes.bool,
   isUserOwner: PropTypes.bool,
   onSelectCourse: PropTypes.func,
+  onRemoveCourse: PropTypes.func,
   onInviteStudents: PropTypes.func,
   onCourseSettings: PropTypes.func
 };
