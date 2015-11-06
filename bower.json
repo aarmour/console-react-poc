@@ -8,5 +8,8 @@
   "moduleType": [
     "globals",
     "node"
+  ],
+  "ignore": [
+    "*.md"
   ]
 }
