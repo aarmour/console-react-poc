@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "@aarmour/console-react-poc": "0.0.2",
     "react": "^0.14.2",
