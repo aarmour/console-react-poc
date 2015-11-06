@@ -48,9 +48,9 @@ function renderCourseListItem() {
 
   const code = `
     <CourseListItem
-      id='psychology-101'
+      id="psychology-101"
       title="Psychology 101"
-      educators=['Sigmund Freud', 'B. F. Skinner']
+      educators={['Sigmund Freud', 'B. F. Skinner']}
       startDate={new Date('04-02-1980')}
       endDate={new Date('12-31-2018')}
       thumbnailUrl="http://www.fillmurray.com/g/300/200"

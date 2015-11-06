@@ -9,6 +9,15 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+a {
+  color: #007D9C;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #006984;
+}
+
 .code {
   border: solid 1px #ccc;
 }
