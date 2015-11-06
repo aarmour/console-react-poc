@@ -1,0 +1,12 @@
+{
+  "name": "console-react-poc",
+  "private": true,
+  "main": [
+    "components.js",
+    "style.css"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ]
+}
