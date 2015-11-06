@@ -49,11 +49,15 @@ function renderCourseListItem() {
   const code = `
     <CourseListItem
       id="psychology-101"
+      brand="REVEL™"
       title="Psychology 101"
+      sectionCode="PSY-123-9876"
       educators={['Sigmund Freud', 'B. F. Skinner']}
       startDate={new Date('04-02-1980')}
       endDate={new Date('12-31-2018')}
       thumbnailUrl="http://www.fillmurray.com/g/300/200"
+      isDeleted=false
+      isUserOwner=false
       onSelectCourse={handleSelectCourse}
       onRemoveCourse={handleRemoveCourse}
       onInviteStudents={handleInviteStudents}
@@ -66,7 +70,9 @@ function renderCourseListItem() {
       <h3>Course List Item</h3>
       <CourseListItem
         id="psychology-101"
+        brand="REVEL™"
         title="Psychology 101"
+        sectionCode="PSY-123-9876"
         educators={educators}
         startDate={startDate}
         endDate={endDate}
@@ -85,6 +91,7 @@ function renderCourseList() {
   const courses = [
     {
       id: 'the-arrow-of-time',
+      brand: 'Foo',
       title: 'The Arrow of Time',
       educators: ['Sean Carroll'],
       startDate: new Date('01-01-2016'),
@@ -94,6 +101,7 @@ function renderCourseList() {
     },
     {
       id: 'introduction-to-chemistry',
+      brand: 'Bar',
       title: 'Introduction to Chemistry',
       educators: ['Niels Bohr', 'Amedeo Avogadro'],
       startDate: new Date('01-01-2016'),
@@ -102,6 +110,7 @@ function renderCourseList() {
     },
     {
       id: 'history-of-the-earth',
+      brand: 'Baz',
       title: 'History of the Earth',
       educators: ['James Hutton'],
       startDate: new Date('01-01-2012'),
@@ -112,8 +121,40 @@ function renderCourseList() {
   ];
 
   const code = `
+    const courses = [
+      {
+        id: 'the-arrow-of-time',
+        brand: 'Foo',
+        title: 'The Arrow of Time',
+        educators: ['Sean Carroll'],
+        startDate: new Date('01-01-2016'),
+        endDate: new Date('06-01-2016'),
+        thumbnailUrl: 'http://www.fillmurray.com/300/200',
+        isUserOwner: true
+      },
+      {
+        id: 'introduction-to-chemistry',
+        brand: 'Bar',
+        title: 'Introduction to Chemistry',
+        educators: ['Niels Bohr', 'Amedeo Avogadro'],
+        startDate: new Date('01-01-2016'),
+        endDate: new Date('06-01-2016'),
+        thumbnailUrl: 'http://www.placecage.com/300/200'
+      },
+      {
+        id: 'history-of-the-earth',
+        brand: 'Baz',
+        title: 'History of the Earth',
+        educators: ['James Hutton'],
+        startDate: new Date('01-01-2012'),
+        endDate: new Date('06-01-2012'),
+        thumbnailUrl: 'http://www.placecage.com/g/300/200',
+        isDeleted: true
+      }
+    ];
+
     <CourseList
-      courses=[...]
+      courses={courses}
       onSelectCourse={handleSelectCourse}
       onRemoveCourse={handleRemoveCourse}
       onInviteStudents={handleInviteStudents}

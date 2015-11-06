@@ -20,7 +20,9 @@ function CourseListItem(props) {
         <div className={styles.thumbnail} style={thumbnailBg}></div>
       </div>
       <div className={styles.content}>
+        <span className={styles.textSecondary}>{props.brand}</span>
         <Title><a href="#" className={styles.link}>{props.title}</a></Title>
+        <span className={styles.textSecondary}>{props.sectionCode}</span>
         <CourseInfoItem label="Educators:" value={educators} />
         <CourseInfoItem label="Course Dates:">
           <DateRange startDate={props.startDate} endDate={props.endDate} />

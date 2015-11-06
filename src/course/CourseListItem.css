@@ -35,3 +35,8 @@
   top: 200px;
   width: 300px;
 }
+
+.textSecondary {
+  font-size: 0.875rem;
+  color: #7d7d7d;
+}
