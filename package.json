@@ -12,7 +12,9 @@
     "build": "babel ./src -d ./lib --ignore '__tests__' && cd ./src && find . -name '*.css' | cpio -pdm ../lib",
     "build-umd": "NODE_ENV=production webpack ./index.js umd/components.js",
     "build-min": "NODE_ENV=production webpack -p ./index.js umd/components.min.js",
-    "test": "echo \"LOL\" && exit 0"
+    "build-all": "npm run build && npm run build-umd && npm run build-min",
+    "test": "echo \"LOL\" && exit 0",
+    "prepublish": "npm run build-all"
   },
   "license": "MIT",
   "peerDependencies": {
