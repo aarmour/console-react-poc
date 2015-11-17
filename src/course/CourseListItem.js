@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './CourseListItem.css';
 import { CourseInfoItem, CourseActionButtons } from './';
-import { Title } from '../typography';
+import { Title, Label } from '../typography';
 import { DateRange } from '../date-formatting';
 
 function handleAction(action, courseId, event) {
@@ -10,8 +10,24 @@ function handleAction(action, courseId, event) {
   if (event) event.preventDefault();
 }
 
+function renderEducators(props) {
+  const educators = props.educators.slice(0, 2).join(',<br>');
+
+  if (props.educators.length > 2) {
+    const count = props.educators.length - 2;
+
+    return (
+      <div>
+        <div dangerouslySetInnerHTML={{__html: educators}} />
+        <Label type="secondary">+{count} more</Label>
+      </div>
+    );
+  } else {
+    return <div dangerouslySetInnerHTML={{__html: educators}} />;
+  }
+}
+
 function CourseListItem(props) {
-  const educators = props.educators.join(', ');
   const thumbnailBg = { backgroundImage: `url(${props.thumbnailUrl})` };
 
   return (
@@ -23,7 +39,9 @@ function CourseListItem(props) {
         <span className={styles.textSecondary}>{props.brand}</span>
         <Title><a href="#" className={styles.link}>{props.title}</a></Title>
         <span className={styles.textSecondary}>{props.sectionCode}</span>
-        <CourseInfoItem label="Educators:" value={educators} />
+        <CourseInfoItem label="Educators:">
+          {renderEducators(props)}
+        </CourseInfoItem>
         <CourseInfoItem label="Course Dates:">
           <DateRange startDate={props.startDate} endDate={props.endDate} />
         </CourseInfoItem>

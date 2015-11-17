@@ -41,7 +41,7 @@ const CodeExample = React.createClass({
 });
 
 function renderCourseListItem() {
-  const educators = ['Sigmund Freud', 'B. F. Skinner']
+  const educators = ['Sigmund Freud', 'B. F. Skinner', 'William James', 'Abraham Maslow']
   const startDate = new Date('04-02-1980');
   const endDate = new Date('12-31-2018');
   const thumbnailUrl = 'http://www.fillmurray.com/g/300/200';
