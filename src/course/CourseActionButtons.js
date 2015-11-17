@@ -17,10 +17,15 @@ function renderDeletedButtons(props) {
 }
 
 function renderOwnerButtons(props) {
+  const buttonSeparator = {
+    width: '149px',
+    borderRight: 'solid 1px #ccc'
+  };
+
   return (
     <div>
       <ul className={styles.buttonGroup}>
-        <li className={styles.buttonGroupItem}>
+        <li className={styles.buttonGroupItem} style={buttonSeparator}>
           <CourseButton
             text="Invite Students"
             onClick={handleClick.bind(this, props.onInviteStudents)}
