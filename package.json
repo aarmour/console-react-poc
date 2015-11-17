@@ -1,6 +1,6 @@
 {
   "name": "@aarmour/console-react-poc",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A react.js proof-of-concept for https://console.pearson.com",
   "files": [
     "lib",
